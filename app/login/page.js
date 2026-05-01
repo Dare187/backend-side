@@ -28,7 +28,8 @@ const Login = () => {
             try {
                 const res = await signIn('credentials', {email, password, redirect: false});
 
-                if (res?.error == null ) {
+                if (res?.ok) {
+                    toast.success('logged in successfully!');
                     router.push('/');
                 } else {
                     toast.error('error logging in!');
