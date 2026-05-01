@@ -14,9 +14,11 @@ export async function POST(request, response) {
             data:{
                 email,
                 name,
-                hashedPassword,
+                hashedPassword: hashedPassword,
             },
         });
+
+        console.log("CREATED USER:", user);
 
         return NextResponse.json(user)
     } catch (error) {
